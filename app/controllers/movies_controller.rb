@@ -21,6 +21,12 @@ class MoviesController < ApplicationController
     @movie.update(movie_params)
     redirect_to movies_path, notice: "Update Success"
   end
+  def destroy
+    @movie = Movie.find(params[:id])
+    @movie.destroy
+    flash[:alert] = "Movie deleted"
+    redirect_to movies_path
+  end
 
   private
   def movie_params
