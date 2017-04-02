@@ -6,6 +6,7 @@ class MoviesController < ApplicationController
   end
   def show
     @movie = Movie.find(params[:id])
+    @posts = @movie.posts
   end
   def new
     @movie = Movie.new
