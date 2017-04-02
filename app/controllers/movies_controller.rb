@@ -5,5 +5,7 @@ class MoviesController < ApplicationController
   def show
     @movie = Movie.find(params[:id])
   end
-  
+  def new
+    @movie = Movie.new
+  end
 end
