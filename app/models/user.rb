@@ -5,4 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
          has_many :movies
          has_many :posts
+         has_many :movie_relationships
+         has_many :participated_movies, :through => :movie_relationships, :source => :movie
+         
 end
