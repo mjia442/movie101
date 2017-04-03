@@ -15,6 +15,7 @@ class MoviesController < ApplicationController
     @movie = Movie.new(movie_params)
     @movie.user = current_user
     if @movie.save
+      current_user.join!(@movie)
        redirect_to movies_path
     else
        render :new
